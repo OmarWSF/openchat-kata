@@ -18,22 +18,18 @@ public class LoginRouteAcceptanceTest extends BaseOpenChatRouteAcceptanceTest{
         String username = "pippo";
         String password = "password";
         String about = "forza roma";
-
         String existingUserId = registerUser(username, password, about);
 
         HttpRequest request = requestBuilderFor("/login")
                 .POST(bodyFor(Map.of(
                         "username", username,
                         "password", password
-
                 )))
                 .build();
-
         HttpResponse<String> response = send(request);
 
         assertEquals(200, response.statusCode());
         assertContentType("application/json", response);
-
         Map<String, Object> responseBody = stringJsonToMap(response.body());
         assertEquals(username, responseBody.get("username"));
         assertEquals(existingUserId, responseBody.get("id"));

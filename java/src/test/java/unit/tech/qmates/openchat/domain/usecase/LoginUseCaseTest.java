@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class LoginUseCaseTest {
     @Test
-    void whenUserNameDoesNotExistThenBoh() {
+    void whenUserNameDoesNotExist_ThenAnExceptionIsThrown() {
 
     }
 }
