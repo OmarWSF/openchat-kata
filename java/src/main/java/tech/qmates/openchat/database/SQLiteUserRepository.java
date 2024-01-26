@@ -83,6 +83,11 @@ public class SQLiteUserRepository extends SQLiteRepository implements UserReposi
         }
     }
 
+    @Override
+    public RegisteredUser getUserByCredentials(String username, String password) {
+        return null;
+    }
+
     private RegisteredUser registeredUserFrom(ResultSet resultSet) throws SQLException {
         return new RegisteredUser(
             UUID.fromString(resultSet.getString("id")),

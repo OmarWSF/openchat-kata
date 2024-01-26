@@ -12,4 +12,6 @@ public interface UserRepository {
     Set<RegisteredUser> getAll();
     RegisteredUser getUserById(UUID uuid);
     void reset();
+
+    RegisteredUser getUserByCredentials(String username, String password);
 }
