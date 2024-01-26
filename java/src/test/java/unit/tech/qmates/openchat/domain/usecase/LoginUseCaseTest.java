@@ -29,7 +29,7 @@ public class LoginUseCaseTest {
       "forza roma!"
     ));
 
-    var userInfo = new LoginUseCase().run("pippo", "password");
+    var userInfo = new LoginUseCase(userRepository).run("pippo", "password");
 
     assertEquals(new UserInfo(userId, "pippo", "forza roma!"), userInfo);
   }
